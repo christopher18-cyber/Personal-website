@@ -21,55 +21,78 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.08rem;line-height:1.65}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6}
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
-.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-.top{display:flex;gap:2rem;align-items:center;padding:3.5rem 0 1.5rem}
-.photo{width:128px;height:128px;flex:none;border-radius:8px;object-fit:cover;object-position:50% 30%;border:1px solid var(--line);background:var(--card)}
-h1{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;letter-spacing:-.03em;margin:0 0 .7rem}
-.role{font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1.35;margin:0 0 .9rem}
-.status{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:.25rem .7rem;border-radius:999px;font-size:.9rem;margin:0}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:500;margin-bottom:3rem}
+
+/* PC-optimized container width */
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+
+.top{display:flex;gap:2rem;align-items:center;padding:3rem 0 1.5rem}
+.photo{width:120px;height:120px;flex:none;border-radius:10px;object-fit:cover;object-position:50% 30%;border:1px solid var(--line);background:var(--card)}
+h1{font-family:var(--display);font-weight:700;font-size:2.2rem;line-height:1.1;letter-spacing:-.03em;margin:0 0 .7rem}
+.role{font-family:var(--display);font-weight:500;font-size:1.15rem;line-height:1.35;margin:0 0 .8rem;max-width:60ch}
+.status{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:.2rem .7rem;border-radius:999px;font-size:.85rem;margin:0}
+
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem;padding:.8rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:500;font-size:.95rem;margin-bottom:3rem}
 .bar a{color:var(--muted);text-decoration:none}
 .bar a:hover{color:var(--ink)}
 .bar .ext{color:var(--accent)}
 .bar .spacer{flex:1}
-.theme-btn{font-family:var(--display);font-weight:500;font-size:.95rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:6px;padding:.3rem .8rem;cursor:pointer}
+.theme-btn{font-family:var(--display);font-weight:500;font-size:.9rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:6px;padding:.25rem .7rem;cursor:pointer}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent)}
 .theme-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
 section{margin-bottom:3.5rem;scroll-margin-top:1.5rem}
-h2{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;margin:0 0 1.5rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
-h3{font-family:var(--display);font-weight:700;font-size:1.25rem;margin:0 0 .3rem}
-p{margin:0 0 .9rem;max-width:62ch}
-.job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2rem 1rem;margin-bottom:.6rem}
-.when{color:var(--muted);font-size:.95rem}
-ul.plain{margin:0;padding-left:1.2rem;max-width:62ch}
+h2{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.01em;margin:0 0 1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0 0 .3rem}
+p{margin:0 0 .8rem;max-width:70ch}
+
+.job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2rem 1rem;margin-bottom:.4rem}
+.when{color:var(--muted);font-size:.9rem}
+ul.plain{margin:0;padding-left:1.2rem;max-width:70ch}
 ul.plain li{margin-bottom:.4rem}
-.proj{background:var(--card);border:1px solid var(--line);border-left-width:6px;border-radius:6px;padding:1.3rem 1.4rem 1.1rem;margin-bottom:1.2rem}
+
+/* Projects Grid for PC */
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+.proj{background:var(--card);border:1px solid var(--line);border-left-width:5px;border-radius:6px;padding:1.2rem;display:flex;flex-direction:column;justify-content:space-between}
 .proj.live{border-left-color:var(--accent)}
 .proj.wip{border-left-color:#C28A12;border-left-style:dashed}
 .proj.repo{border-left-color:var(--muted)}
-.state{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.4rem}
-.stack{color:var(--muted);font-size:.95rem}
-.links{margin:0;display:flex;gap:1.2rem;font-size:.98rem}
-.legend{color:var(--muted);font-size:.92rem;margin:-.6rem 0 1.4rem}
-dl{margin:0}
-.skill{display:grid;grid-template-columns:150px 1fr;gap:.3rem 1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
-dt{font-family:var(--display);font-weight:500}
+.proj p {max-width: none;}
+.state{display:block;font-size:.8rem;color:var(--muted);margin-bottom:.3rem;font-weight: 600;text-transform: uppercase;letter-spacing: .03em;}
+.stack{color:var(--muted);font-size:.9rem;margin-top:auto;margin-bottom: 0.7rem;}
+.links{margin:0;display:flex;gap:1rem;font-size:.9rem;flex-wrap: wrap;}
+.legend{color:var(--muted);font-size:.88rem;margin:-.8rem 0 1.2rem}
+
+dl{margin:0;display:grid;grid-template-columns:repeat(2, 1fr);gap:1rem;}
+.skill{display:flex;flex-direction:column;gap:.2rem;padding:1rem;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+dt{font-family:var(--display);font-weight:700;color:var(--accent);}
 dd{margin:0}
 .learning{color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:1.5rem 0 3rem;color:var(--muted);font-size:.95rem}
-@media (max-width:600px){
-  .top{flex-direction:column;align-items:flex-start;gap:1.2rem;padding-top:2.2rem}
-  h1{font-size:2.5rem}
-  .bar .spacer{display:none}
-  .skill{grid-template-columns:1fr}
-}
+
+footer{border-top:1px solid var(--line);padding:1.5rem 0 3rem;color:var(--muted);font-size:.9rem}
+
 .pip{display: flex;}
 .pip-bt{margin-left: 130px;}
 .first{margin-right: 10px;}
 
+/* Mobile Responsiveness Rules */
+@media (max-width:768px){
+  .wrap{padding:0 1rem;}
+  .top{flex-direction:column;align-items:flex-start;gap:1rem;padding-top:1.8rem}
+  h1{font-size:1.9rem}
+  .bar{gap:.5rem .9rem; font-size:.9rem;}
+  .bar .spacer{display:none}
+  #projects-grid {grid-template-columns: 1fr;}
+  dl {grid-template-columns: 1fr;}
+  .pip-bt {margin-left: 0; margin-top: 0.5rem;}
+  .pip {flex-wrap: wrap;}
+}
 </style>
 <script>
 try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}
@@ -79,14 +102,13 @@ try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.doc
 <div class="wrap">
 
 <header class="top">
-  <img class="photo" src="photo.png" alt="Portrait of Christopher" width="128" height="128">
+  <img class="photo" src="photo.png" alt="Portrait of Christopher" width="120" height="120">
   <div>
-	<div class="pip">
-		<h1 class="first">Adegoke</h1>
-		<h1>Christopher</h1>
-		 <button type="button" class="theme-btn pip-bt" id="theme-btn">Switch to dark</button>
-	</div>
-    
+    <div class="pip">
+        <h1 class="first">Adegoke</h1>
+        <h1>Christopher</h1>
+         <button type="button" class="theme-btn pip-bt" id="theme-btn">Switch to dark</button>
+    </div>
     <p class="role">Backend and full-stack engineer building APIs, real-time systems, and AI agents.</p>
     <p class="status">Open to internships and part/full time roles</p>
   </div>
@@ -99,11 +121,9 @@ try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.doc
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
   <span class="spacer"></span>
-  <!-- EDIT: replace these links with your real ones -->
   <a class="ext" href="https://github.com/christopher18-cyber">GitHub</a>
   <a class="ext" href="https://www.linkedin.com/in/christopher-adegoke-813169338/">LinkedIn</a>
   <a class="ext" href="Adegoke Christopher - Resume.pdf">Resume</a>
- 
 </nav>
 
 <main>
@@ -114,70 +134,62 @@ try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.doc
     <h3>Software Engineering Intern, Megatron Workstation</h3>
     <span class="when">Current</span>
   </div>
-  <!-- EDIT: replace these bullets with what you actually built or shipped. -->
-  <!-- <ul class="plain">
-    <li>Working on the engineering team's software projects as a backend-focused intern.</li>
-    <li>Add a specific feature, service, or fix you delivered here, and the result it had.</li>
-  </ul> -->
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <p class="legend">Solid border: live. Dashed border: in progress. Grey border: code only.</p>
 
-  <article class="proj live">
-    <span class="state">Deployed</span>
-    <h3>Golf charity platform</h3>
-    <p>A full-stack platform for a golf charity, designed, built, and deployed in two days as a timed technical challenge.</p>
-    <p class="stack">MERN, Supabase, Render, Vercel</p>
-    <p class="links"><a href="https://golf-app-frontend-gray.vercel.app/">Live site</a><a href="https://github.com/christopher18-cyber/golf-app-frontend">Source code Frontend</a>
-		<a href="https://github.com/christopher18-cyber/golf-charity-server">Source code Backend</a></p>
-  </article>
+  <div id="projects-grid">
+    <article class="proj live">
+      <span class="state">Deployed</span>
+      <h3>Golf charity platform</h3>
+      <p>A full-stack platform for a golf charity, designed, built, and deployed in two days as a timed technical challenge.</p>
+      <p class="stack">MERN, Supabase, Render, Vercel</p>
+      <p class="links"><a href="https://golf-app-frontend-gray.vercel.app/">Live site</a><a href="https://github.com/christopher18-cyber/golf-app-frontend">Source code Frontend</a>
+          <a href="https://github.com/christopher18-cyber/golf-charity-server">Source code Backend</a></p>
+    </article>
 
-  <article class="proj repo">
-    <span class="state">Backend complete</span>
-    <h3>Dishify</h3>
-    <p>The backend for a food delivery and restaurant platform. Covers OTP-based registration, transactional email, and caching, deployed to the cloud.</p>
-    <p class="stack">Node.js, Express.js, MongoDB, Redis (Upstash), Resend, Render</p>
-    <p class="links"><a href="https://github.com/christopher18-cyber/DISHIFY_PROJECT">Source code</a></p>
-  </article>
+    <article class="proj repo">
+      <span class="state">Backend complete</span>
+      <h3>Dishify</h3>
+      <p>The backend for a food delivery and restaurant platform. Covers OTP-based registration, transactional email, and caching, deployed to the cloud.</p>
+      <p class="stack">Node.js, Express.js, MongoDB, Redis (Upstash), Resend, Render</p>
+      <p class="links"><a href="https://github.com/christopher18-cyber/DISHIFY_PROJECT">Source code</a></p>
+    </article>
 
-  <article class="proj repo">
-    <span class="state">Complete</span>
-    <h3>Card validation API</h3>
-    <p>A REST API that validates payment card details and returns clear results for client applications.</p>
-    <p class="stack">Luhn Alogorithm, express.js</p>
-    <p class="links"><a href="https://github.com/christopher18-cyber/card-validation-api">Source code</a></p>
-  </article>
+    <article class="proj repo">
+      <span class="state">Complete</span>
+      <h3>Card validation API</h3>
+      <p>A REST API that validates payment card details and returns clear results for client applications.</p>
+      <p class="stack">Luhn Algorithm, Express.js</p>
+      <p class="links"><a href="https://github.com/christopher18-cyber/card-validation-api">Source code</a></p>
+    </article>
 
-  <article class="proj wip">
-    <span class="state">In progress</span>
-    <h3>Real-time attendance app</h3>
-    <p>I am building the backend for an attendance system that records and updates check-ins in real time.</p>
-    <p class="stack">Microservice (Java(Spring boot), Hibernate,Mongoose, Express.js)</p>
-    <p class="links"><a href="https://github.com/christopher18-cyber/Real-time-Attendance-Auth-service">Source code</a></p>
-  </article>
+    <article class="proj wip">
+      <span class="state">In progress</span>
+      <h3>Real-time attendance app</h3>
+      <p>I am building the backend for an attendance system that records and updates check-ins in real time.</p>
+      <p class="stack">Microservice (Java(Spring boot), Hibernate, Mongoose, Express.js)</p>
+      <p class="links"><a href="https://github.com/christopher18-cyber/Real-time-Attendance-Auth-service">Source code</a></p>
+    </article>
+    
+    <article class="proj">
+      <span class="state">Complete</span>
+      <h3>Autonomous Multi-Agent Research Pipeline</h3>
+      <p>Engineered an automated research system using LangGraph and Groq APIs, orchestrating Search, Reader, Writer, and Critic agents to synthesize deep web insights.</p>
+      <p class="stack">Python, LangGraph, LangChain, Groq, Tavily API, Trafilatura, BeautifulSoup</p>
+      <p class="links"><a href="https://github.com/christopher18-cyber/Multi-agent-research-system-Langchain-">Source code</a></p>
+    </article>
 
-  
-<article class="proj">
-  <h3>Autonomous Multi-Agent Research Pipeline</h3>
-  <p>Engineered an automated research system using LangGraph and Groq APIs, orchestrating Search, Reader, Writer, and Critic agents to synthesize deep web insights.</p>
-  <p class="stack">Python, LangGraph, LangChain, Groq, Tavily API, Trafilatura, BeautifulSoup</p>
-  <p class="links"><a href="https://github.com/christopher18-cyber/Multi-agent-research-system-Langchain-">Source code</a></p>
-  <ul>
-    <li>Architected a robust multi-agent state graph workflow with built-in token rate-limiting safeguards and recursive execution constraints.</li>
-    <li>Integrated multi-strategy web scraping fallbacks using Trafilatura, Readability, and BeautifulSoup with custom timeout handling to ensure high fault tolerance.</li>
-    <li>Optimized token-per-minute (TPM) and daily rate limit consumption by implementing selective result chunking and context window management.</li>
-  </ul>
-</article>
-
-  <article class="proj wip">
-    <span class="state">In progress</span>
-    <h3>Edu-tech application</h3>
-    <p>An education technology application currently in development.</p>
-	<p class="stack">Java(Spring Boot), Node.js/Express.js, Mongoose,Hibernate</p>
-    <p class="links"><a href="https://github.com/christopher18-cyber/school-registry">Source code</a></p>
-  </article>
+    <article class="proj wip">
+      <span class="state">In progress</span>
+      <h3>Edu-tech application</h3>
+      <p>An education technology application currently in development.</p>
+      <p class="stack">Java(Spring Boot), Node.js/Express.js, Mongoose, Hibernate</p>
+      <p class="links"><a href="https://github.com/christopher18-cyber/school-registry">Source code</a></p>
+    </article>
+  </div>
 </section>
 
 <section id="skills">
